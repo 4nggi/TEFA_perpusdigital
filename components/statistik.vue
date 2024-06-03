@@ -5,7 +5,7 @@
  </template>
 
  <script setup>
-import Chart from 'Chart.js/auto'
+import Chart from 'Chart.js/auto';
 
 const labels=[
   'January',
