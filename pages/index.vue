@@ -14,7 +14,7 @@
             <nuxt-link to="../buku">
                   <div class="card bg-buku rounded-5">
                       <div class="card-body">
-                          <h2>Cari buku</h2>
+                          <h2>Cari Buku</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -75,13 +75,13 @@ getjml_buku()
   box-shadow: 1px 1px 10px #424242;
 }
 .card.bg-pengunjung {
-  background-image: url('../assets/img/Picture1.png');
+  background-image: url('../assets/img/bg-home-cari-buku.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 .card.bg-buku {
-  background: url('../assets/img/Picture2.png') no-repeat center center;
+  background: url('../assets/img/rawr.jpg') no-repeat center center;
   background-size: cover;
 }
 .raccing {
@@ -91,7 +91,7 @@ border-radius: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:   #20D4BF;
+background-color:   #697408;
 }
 .raccing1 {
 height: 200px;
@@ -100,7 +100,7 @@ border-radius: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:   #20D4BF;
+background-color:   #4b5856;
 }
 .card-body h2{
   color:black;

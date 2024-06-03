@@ -13,7 +13,7 @@
                             <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
                         </select>
                     </div>
-                    <div v-if="form.keanggotaan == 2" class="mb-3">
+                    <div v-if="form.keanggotaan == 1" class="mb-3">
                         <div class="row">
                             <div class="col-md-4">
                                 <select v-model="form.tingkat" class="form-control form-control-lg form-select rounded-5 mb-2 abu">
