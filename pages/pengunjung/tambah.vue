@@ -75,9 +75,8 @@ const form = ref({
 });
 
 const kirimData = async () => {
-    console.log(form.value)
-    const { error } = await supabase.from("Pengunjung").insert([form.value])
-    if(!error) navigateTo("/pengunjung")
+    const { error } = await supabase.from("pengunjung").insert([form.value])
+    if(!error) navigateTo("/pengunjung/")
     else throw error
 }
 

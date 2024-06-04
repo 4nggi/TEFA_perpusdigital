@@ -20,7 +20,7 @@
           </div>
       </div>
       <NuxtLink to="/buku" class="btn btn-light btn-lg rounded-5 px-5">
-       kembali
+      kembali
       </NuxtLink>
   </div>
 </template>
@@ -34,7 +34,7 @@ const buku = ref([])
 
 const getBukuByID = async () => {
   const { data, error } = await supabase
-  .from('Buku')
+  .from('buku')
   .select(`*, kategori_buku(*)`)
   .eq('id', route.params.id)
   .single()

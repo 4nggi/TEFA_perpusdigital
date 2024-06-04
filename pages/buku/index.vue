@@ -3,7 +3,7 @@
       <div class="row"> 
         <div class="col-lg-12">
           <div class="my-3">
-            <form @submit.prevent="getbuku">
+            <form @submit.prevent="getBuku">
             <input
               v-model="keyword"
               type="search"
@@ -39,8 +39,8 @@
 
   const getBuku = async () => {
     const { data, error} = await supabase
-    .from('Buku')
-    .select(`*,kategori(*)`)
+    .from('buku')
+    .select(`*, kategori_buku(*)`)
     .ilike("judul", `%${keyword.value}%`);
     if(data) books.value= data;
   
