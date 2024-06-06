@@ -25,13 +25,13 @@
 <div class="Container-fluid">
   <div class="row justify-content-evenly rounded-3">
     <div class="col-5">
-      <nuxt-link to="/pengunjung">
       <div class="card-body text">
         <div class="raccing">
+          <nuxt-link to="/pengunjung">
             <h2 class="pt-4"><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
+          </nuxt-link>
         </div>
       </div>
-      </nuxt-link>
     </div>
     <div class="col-5">
       <nuxt-link to="/buku">
@@ -53,14 +53,14 @@ const jml_buku = ref(0)
 
 async function getjml_pengunjung() {
 const{ error , data, count } = await supabase
-.from("Pengunjung")
+.from("pengunjung")
 .select('*', { count: 'exact' })
 if (count) jml_pengunjung.value = count
 
 }
 async function getjml_buku() {
 const{ error , data, count } = await supabase
-.from("Buku")
+.from("buku")
 .select('*', { count: 'exact' })
 if (count) jml_buku.value = count
 
