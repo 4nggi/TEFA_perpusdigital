@@ -19,7 +19,7 @@
     labels:labels,
     datasets:[{
       label: 'pengunjung',
-      data: [6, 8, 10, 9, 9,3],
+      data: [5, 8, 10, 9, 9,3],
       backgroundColor:[
         'rgb(217, 217, 217)',
         'rgb(217, 217, 217)',
