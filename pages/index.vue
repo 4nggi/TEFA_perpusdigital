@@ -25,16 +25,20 @@
 <div class="Container-fluid">
   <div class="row justify-content-evenly rounded-3">
     <div class="col-5">
-      <div class="card1">
+      <nuxt-link to="/pengunjung">
+      <div class="card-body text">
         <div class="raccing">
-            <h2><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
+            <h2 class="pt-4"><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
         </div>
       </div>
+      </nuxt-link>
     </div>
     <div class="col-5">
+      <nuxt-link to="/buku">
       <div class="raccing1">
         <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
       </div>
+      </nuxt-link>
     </div>
   </div>
   <div class="line">

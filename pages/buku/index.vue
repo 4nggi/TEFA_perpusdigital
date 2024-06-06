@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
       <div class="row"> 
-        <div class="col-lg-12">
+        <div class="col-lg-12 -flex justify-content-around">
           <div class="my-3">
             <form @submit.prevent="getBuku">
             <input
@@ -12,11 +12,11 @@
               />
             </form>
           </div>
-          <div class="my-3 text-muted">menampilkan 30 dari 30</div>
+          <div class="my-3 text-muted">menampilkan {{ buku?.length }} dari {{ totalBuku }}</div>
           <div class="row justify-content-evenly">
             <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
             <nuxt-link :to="`/buku/${buku.id}`">
-                <div class="card mb-3">
+                <div class="card mb-3 shadow-lg">
                   <div class="card-body">
                     <img :src="buku.cover" class="cover" :alt="buku.judul" />
                   </div>
@@ -54,6 +54,16 @@
   </script>
 
   <style scoped>
+  .shadow-lg {
+    box-shadow: 6px 4px 0 #050101 !important;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px #050101 !important;
+  }
+  .card {
+    transition: all .2s ease-in-out;
+  }
   .card-body {
     width: 100%;
     height: 30em;
