@@ -19,6 +19,15 @@
                   </div>
               </nuxt-link>
           </div>
+          <div class="col-lg-6 box">
+            <nuxt-link to="../riwayat buku">
+                  <div class="card rg-buku rounded-5">
+                      <div class="card-body">
+                          <h2>riwayat peminjaman buku</h2>
+                      </div>
+                  </div>
+              </nuxt-link>
+          </div>
       </div>
   </div>
   <h2 style="margin: 30px"><strong>STATISTIK</strong></h2>

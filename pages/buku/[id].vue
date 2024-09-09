@@ -14,6 +14,7 @@
               <ul class="list-group list-group-flush">
                   <li class="list-group-item">penulis : {{  buku.penulis }}</li>
                   <li class="list-group-item">tahun_terbit : {{  buku.tahun_terbit }}</li>
+                  <li class="list-group-item">penerbit : {{ buku.penerbit }}</li>
                   <li class="list-group-item">rak : {{ buku.rak }}</li>
                   <li class=" list-group-item">deskripsi : {{ buku.deskripsi }}</li>
                   <NuxtLink :to="buku.link" target="_blank" class="btn btn-primary">Baca</NuxtLink>
