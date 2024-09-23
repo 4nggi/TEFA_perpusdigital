@@ -20,10 +20,10 @@
               </nuxt-link>
           </div>
           <div class="col-lg-6 box">
-            <nuxt-link to="../riwayat buku">
-                  <div class="card rg-buku rounded-5">
+            <nuxt-link to="../peminjaman">
+                  <div class="card bg-peminjaman rounded-5">
                       <div class="card-body">
-                          <h2>riwayat peminjaman buku</h2>
+                          <h2> Riwayat peminjaman buku</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -48,6 +48,8 @@
         <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
       </div>
       </nuxt-link>
+    
+    
     </div>
   </div>
   <div class="line">
@@ -59,6 +61,7 @@
 const supabase = useSupabaseClient()
 const jml_pengunjung = ref(0)
 const jml_buku = ref(0)
+const jml_peminjaman = ref(0)
 
 async function getjml_pengunjung() {
 const{ error , data, count } = await supabase
@@ -74,11 +77,18 @@ const{ error , data, count } = await supabase
 if (count) jml_buku.value = count
 
 }
+async function getjml_peminjaman() {
+const{ error , data, count } = await supabase
+.from("peminjaman")
+.select('*', { count: 'exact' })
+if (count) jml_peminjaman.value = count
 
+}
 
 onMounted(() => {
 getjml_pengunjung()
 getjml_buku()
+getjml_peminjaman()
 })
 </script>
 
@@ -95,6 +105,12 @@ getjml_buku()
 }
 .card.bg-buku {
   background: url('../assets/img/rawr.jpg') no-repeat center center;
+  background-size: cover;
+}
+.card.bg-peminjaman {
+  background-image: url('../assets/img/jis.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 .raccing {

@@ -42,7 +42,7 @@ const keyword = ref('')
 const visitors = ref([])
 
 const getPengunjung = async () => {
-    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('id', { ascending: false })
+    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('waktu', { ascending: false })
     if(data) visitors.value = data
 }
 const getBuku = async () => {
