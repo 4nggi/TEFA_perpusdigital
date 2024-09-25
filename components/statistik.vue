@@ -1,45 +1,25 @@
 <template>
   <div>
-    <canvas id="statistik"></canvas>
+    <h1>Statistik Pengunjung per Bulan</h1>
+    <ul>
+      <li v-for="stat in statistikList" :key="stat.bulan">
+        Bulan: {{ stat.bulan }} - Jumlah Pengunjung: {{ stat.jumlah_pengunjung }}
+      </li>
+    </ul>
   </div>
-  </template>
-  
-  <script setup>
-  import Chart from 'chart.js/auto';
-  
-  const labels = [
-    'january',
-    'february',
-    'march',
-    'april',
-    'mei',
-    'june',
-  ];
-  const data ={
-    labels:labels,
-    datasets:[{
-      label: 'pengunjung',
-      data: [5, 8, 10, 9, 9,3],
-      backgroundColor:[
-        'rgb(217, 217, 217)',
-        'rgb(217, 217, 217)',
-        'rgb(217, 217, 217)',
-        'rgb(217, 217, 217)',
-        'rgb(217, 217, 217)',
-        'rgb(217, 217, 217)'
-      ],
-    }]
-  };
-  const  config ={
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-  onMounted(()=>{
-    const myChart = new Chart(
-      document.getElementById('statistik'),
-      config
-    );
-  })
-  
-  </script>
+</template>
+
+<script setup>
+const statistikList = ref([]);
+let supabase = useSupabaseClient()
+
+const fetchStatistik = async () => {
+  const { data, error } = await supabase
+    .from('pengunjung')
+    .select()
+    // .rpc('get_statistik_pengunjung_per_bulan'); // Pastikan Anda telah membuat fungsi ini di Supabase
+  if(data) console.log(data)
+};
+
+
+</script>

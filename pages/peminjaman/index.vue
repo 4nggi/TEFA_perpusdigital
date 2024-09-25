@@ -14,7 +14,7 @@
                       <tr>
                           <td>#</td>
                           <td>Nama</td>
-                          <td>Tanggal Pinjam</td>
+                          <td>Tanggal peminjaman</td>
                           <td>Judul Buku</td>
                           
                       </tr>
@@ -23,15 +23,15 @@
                       <tr v-for="(visitor,i) in visitors" :key="i">
                           <td>{{ i+1 }}.</td>
                           <td>{{ visitor.nama }}</td>
-                          <td>{{ visitor.borrow_date }}</td>
+                          <td>{{ visitor.tanggal_peminjaman }}</td>
                           <td>{{ visitor.tanggal }}, {{ visitor.waktu }}</td>
-                          <td>{{ visitor.book_tittle }}</td>
+                          <td>{{ visitor.judul_buku }}</td>
                       </tr>
                   </tbody>
                </table>
           </div>
       </div>
-      <NuxtLink to="/peminjaman/penambah">
+      <NuxtLink to="/">
           <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
       </NuxtLink>
   </div>
@@ -42,7 +42,7 @@ const keyword = ref('')
 const visitors = ref([])
 
 const getPeminjaman = async () => {
-  const { data, error } = await supabase.from('peminjaman').select(`*, borrow_date(*), book_tittle(*)`).order('waktu', { ascending: false })
+  const { data, error } = await supabase.from('peminjaman').select(`*, tanggal_peminjaman(*), judul_buku(*)`).order('waktu', { ascending: false })
   if(data) visitors.value = data
 }
 

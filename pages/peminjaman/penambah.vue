@@ -1,31 +1,29 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="text-center my-4">FORM peminjaman</h2>
-                <form @submit.prevent="kirimData">
-                    <div class="mb-3">
-                        <input v-model="form.nama" class="form-control form-control-lg rounded-5 abu" type="text" placeholder="nama..."/>
-                    </div>
-                    <div class="mb-3">
-                        <input v-model="form.borrow_date" class="form-control form-control-lg rounded-5 abu" type="text" placeholder="tanggal..."/>
-                        <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
-                    </div>
-                    <div class="mb-3">
-                        <input v-model="form.book_tittle" class="form-control form-control-lg rounded-5 abu" type="text" placeholder="judul buku..."/>
-                        <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
-                    </div>
-                            <NuxtLink to="/peminjaman">
-                            <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
-                            </NuxtLink>
-                            <NuxtLink to="/buku">
-                                 <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
-                            </NuxtLink>
-                            
-                </form>
+      <div class="row">
+          <div class="col-lg-12">
+              <h2 class="text-center my-4">form peminjaman</h2>
+              <div class="my-3">
+        <form @submit.prevent="kirimData">
+        <label for="nama"> Nama:</label>
+        <input type="text" id="nama" v-model="nama" required class="form-control form-control-lg rounded-5 abu"><br><br>
+        <label for="judul_buku">Judul Buku:</label>
+        <input type="text" id="judul_buku" v-model="judulBuku" required class="form-control form-control-lg rounded-5 abu"><br><br>
+        <label for="tanggal_peminjaman">Tanggal Peminjaman:</label>
+        <input type="date" id="tanggal_peminjaman" v-model="tanggalPeminjaman" required class="form-control form-control-lg rounded-5 abu"><br><br>
+        
+        <NuxtLink to="/peminjaman">
+        <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
+        </NuxtLink>
+        <NuxtLink to="/buku">
+        <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
+        </NuxtLink>
+        </form>
             </div>
         </div>
     </div>
+    </div>
+  
 </template>
 <script setup>
 const supabase = useSupabaseClient()
@@ -34,9 +32,9 @@ const members = ref([]);
 const objectives = ref([]);
 
 const form = ref({
-    nama: "",
-    borrow_date: "",
-    book_tittle: "",
+    nama: '',
+    judulBuku: '',
+    tanggalPeminjaman: ''
 });
 
 const kirimData = async () => {
@@ -45,19 +43,19 @@ const kirimData = async () => {
     else throw error
 }
 
-const getborrow_date = async () => {
-    const { data, error } = await supabase.from("borrow_date").select("*")
+const gettanggal_peminjaman= async () => {
+    const { data, error } = await supabase.from("tanggal_peminjaman").select("*")
     if(data) members.value = data
 };
 
-const getbook_tittle = async () => {
-    const { data, error } = await supabase.from("book_tittle").select("*")
+const getjudul_buku = async () => {
+    const { data, error } = await supabase.from("judul_buku").select("*")
     if(data) objectives.value = data
 };
 
 onMounted(() => {
-    getborrow_date();
-    getbook_tittle();
+    gettanggal_peminjaman();
+    getjudul_buku();
 });
 </script>
 <style scoped>

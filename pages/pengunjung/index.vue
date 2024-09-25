@@ -31,7 +31,7 @@
                  </table>
             </div>
         </div>
-        <NuxtLink to="/pengunjung/tambah">
+        <NuxtLink to="/">
             <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink>
     </div>
@@ -42,7 +42,7 @@ const keyword = ref('')
 const visitors = ref([])
 
 const getPengunjung = async () => {
-    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('waktu', { ascending: false })
+    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('id', { ascending: false })
     if(data) visitors.value = data
 }
 const getBuku = async () => {
