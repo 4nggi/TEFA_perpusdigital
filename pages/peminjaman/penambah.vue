@@ -6,15 +6,16 @@
               <div class="my-3">
         <form @submit.prevent="kirimData">
         <label for="nama"> Nama:</label>
-        <input type="text" id="nama" v-model="nama" required class="form-control form-control-lg rounded-5 abu"><br><br>
+        <input type="text" id="nama" v-model="form.nama" required class="form-control form-control-lg rounded-5 abu"><br><br>
         <label for="judul_buku">Judul Buku:</label>
-        <input type="text" id="judul_buku" v-model="judulBuku" required class="form-control form-control-lg rounded-5 abu"><br><br>
-        <label for="tanggal_peminjaman">Tanggal Peminjaman:</label>
-        <input type="date" id="tanggal_peminjaman" v-model="tanggalPeminjaman" required class="form-control form-control-lg rounded-5 abu"><br><br>
-        
-        <NuxtLink to="/peminjaman">
+        <div class="col-lg-12">
+                                <select v-model="form.judul" class="form-control form-control-lg form-select rounded-5 mb-2 abu">
+                                    <option value="">pilih buku</option>
+                                    <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.judul }}</option>
+                                </select>
+                            </div>
+        <br>
         <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
-        </NuxtLink>
         <NuxtLink to="/buku">
         <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink>
@@ -33,8 +34,7 @@ const objectives = ref([]);
 
 const form = ref({
     nama: '',
-    judulBuku: '',
-    tanggalPeminjaman: ''
+    judul: ''
 });
 
 const kirimData = async () => {
@@ -48,19 +48,20 @@ const gettanggal_peminjaman= async () => {
     if(data) members.value = data
 };
 
-const getjudul_buku = async () => {
-    const { data, error } = await supabase.from("judul_buku").select("*")
+const getjudul = async () => {
+    const { data, error } = await supabase.from("buku").select()
     if(data) objectives.value = data
 };
 
+
 onMounted(() => {
     gettanggal_peminjaman();
-    getjudul_buku();
+    getjudul();
 });
 </script>
 <style scoped>
 .btn{
-    background-color: aquamarine;
+    background-color: rgb(223, 223, 223);
     color: black;
 }
 .nama{

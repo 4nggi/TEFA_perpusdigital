@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <h2 class="text-center my-4">riwayat kunjungan</h2>
                 <div class="my-3">
-                    <form  @submit.prevent="getBuku">
+                    <form  @submit.prevent="getPengunjung">
                         <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Filter...">
                     </form>
                 </div>
@@ -12,7 +12,7 @@
                  <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <td>#</td>
+                            <td>no</td>
                             <td>NAMA</td>
                             <td>KEANGGOTAAN</td>
                             <td>WAKTU</td>

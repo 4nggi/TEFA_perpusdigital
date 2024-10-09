@@ -18,15 +18,17 @@
                   <li class="list-group-item">rak : {{ buku.rak }}</li>
                   <li class=" list-group-item">deskripsi : {{ buku.deskripsi }}</li>
                   <NuxtLink :to="buku.link" target="_blank" class="btn btn-primary">Baca</NuxtLink>
-                  <NuxtLink to="/peminjaman/penambah">
-                  <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">pinjam</button>
-                  </NuxtLink>
               </ul>
           </div>
       </div>
       <NuxtLink to="/buku" class="btn btn-light btn-lg rounded-5 px-5">
       kembali
       </NuxtLink>
+  </div>
+  <div class="footer">
+    <NuxtLink to="/peminjaman/penambah">
+      <button type="submit" class="btn btn-primary btn-lg rounded-5 px-5">pinjam buku ini</button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -53,5 +55,10 @@ onMounted(() => {
 <style scoped>
 .cover{
   width: 100%;
+}
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
 }
 </style>

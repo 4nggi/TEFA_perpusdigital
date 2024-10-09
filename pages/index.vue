@@ -19,7 +19,8 @@
                   </div>
               </nuxt-link>
           </div>
-          <div class="col-lg-6 box">
+          <div class="row my-5">
+            <div class="col-lg-6 box ">
             <nuxt-link to="../peminjaman">
                   <div class="card bg-peminjaman rounded-5">
                       <div class="card-body">
@@ -27,6 +28,16 @@
                       </div>
                   </div>
               </nuxt-link>
+            </div>
+              <div class="col-lg-6 box">
+            <nuxt-link to="../pengembalian">
+                  <div class="card bg-pengembalian rounded-5">
+                      <div class="card-body">
+                          <h2>pengembalian</h2>
+                      </div>
+                  </div>
+              </nuxt-link>
+          </div>
           </div>
       </div>
   </div>
@@ -53,7 +64,7 @@
     </div>
   </div>
   <div class="line">
-    <statistik/>
+    <Chart />
   </div>
 </div>
 </template>
@@ -84,11 +95,19 @@ const{ error , data, count } = await supabase
 if (count) jml_peminjaman.value = count
 
 }
+async function getjml_pengembalian() {
+const{ error , data, count } = await supabase
+.from("peminjaman")
+.select('*', { count: 'exact' })
+if (count) jml_peminjaman.value = count
+
+}
 
 onMounted(() => {
 getjml_pengunjung()
 getjml_buku()
 getjml_peminjaman()
+getjml_pengembalian()
 })
 </script>
 
@@ -109,6 +128,12 @@ getjml_peminjaman()
 }
 .card.bg-peminjaman {
   background-image: url('../assets/img/jis.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.card.bg-pengembalian {
+  background-image: url('../assets/img/kmli.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
