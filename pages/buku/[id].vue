@@ -29,6 +29,9 @@
     <NuxtLink to="/peminjaman/penambah">
       <button type="submit" class="btn btn-primary btn-lg rounded-5 px-5">pinjam buku ini</button>
     </NuxtLink>
+    <NuxtLink to="/pengembalian/penambah">
+      <button type="submit" class="btn btn-primary btn-lg rounded-5 px-5">kembalikan buku</button>
+    </NuxtLink>
   </div>
 </template>
 

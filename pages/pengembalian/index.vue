@@ -23,8 +23,9 @@
                         <tr v-for="(visitor,i) in visitors" :key="i">
                             <td>{{ i+1 }}.</td>
                             <td>{{ visitor.nama }}</td>
-                            <td>{{ visitor.tanggal_pengembalian}}</td>
-                            <td>{{ visitor.buku.judul}}</td>
+                            <td>{{ visitor.tanggal_pinjam}}</td>
+                            <td>{{ visitor.tanggal_kembali}}</td>
+                            <td>{{ visitor.peminjaman.peminjaman.id}}</td>
                         </tr>
                     </tbody>
                  </table>
