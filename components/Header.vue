@@ -1,5 +1,5 @@
 <template>
-    <div class="row p-3 color text-white">
+    <div class="row p-3 color text-white position" style="width: 100%; z-index: 10%;">
         <div class="col-lg-1">
             <img src="~/assets/img/LOGO-SMK4.png" alt="logo smkn4" height="100px" width="100px">
         </div>

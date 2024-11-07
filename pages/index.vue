@@ -11,7 +11,7 @@
               </nuxt-link>
           </div>
           <div class="col-lg-6 box">
-            <nuxt-link to="../buku">
+            <nuxt-link to="../buku/rak">
                   <div class="card bg-buku rounded-5">
                       <div class="card-body">
                           <h2>Cari Buku</h2>
