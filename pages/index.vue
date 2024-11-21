@@ -5,7 +5,7 @@
               <nuxt-link to="../pengunjung/tambah">
                   <div class="card bg-pengunjung rounded-5">
                       <div class="card-body">
-                          <h2>Pengunjung</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3">Pengunjung</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -14,7 +14,7 @@
             <nuxt-link to="../buku/rak">
                   <div class="card bg-buku rounded-5">
                       <div class="card-body">
-                          <h2>Cari Buku</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3">Cari Buku</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -24,7 +24,7 @@
             <nuxt-link to="../peminjaman">
                   <div class="card bg-peminjaman rounded-5">
                       <div class="card-body">
-                          <h2> Riwayat peminjaman buku</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3"> Riwayat peminjaman buku</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -33,7 +33,7 @@
             <nuxt-link to="../pengembalian">
                   <div class="card bg-pengembalian rounded-5">
                       <div class="card-body">
-                          <h2>pengembalian</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3">pengembalian</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -157,7 +157,7 @@ align-items: center;
 background-color:   #4b5856;
 }
 .card-body h2{
-  color:black;
+  color:rgb(0, 0, 0);
 }
 .box {
 width: 50%;

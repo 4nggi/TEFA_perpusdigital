@@ -69,9 +69,12 @@ onMounted(() => {
 
 <style>
 @media print {
-   .btn{
+   .btn
+   {
     display: none;
    }
-    
+   .placeholder{
+    display: none;
+   }
 }
 </style>
