@@ -7,20 +7,16 @@
         <form @submit.prevent="kirimData">
         <label form="nama"> Nama:</label>
         <input type="text" id="nama" v-model="form.nama" required class="form-control form-control-lg rounded-5 abu"><br><br>
-        <label form="nama"> judulbuku:</label>
-        <input type="text" id="nama" v-model="form.judulbuku" required class="form-control form-control-lg rounded-5 abu">
         <label form="judul_buku">Judul Buku:</label> 
-        <div class="col-lg-12">
-                                   <select v-model="form.peminjaman" class="form-control form-control-lg form-select rounded-5 mb-2 abu">
+                            <div class="col-lg-12">
+                                   <select v-model="form.judul" class="form-control form-control-lg form-select rounded-5 mb-2 abu">
                                     <option value="">pilih buku</option>
                                     <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.judul }}</option>
                                 </select>   
                             </div>
         <br>
-        <NuxtLink  to="/pengembalian">
         <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
-        </NuxtLink >
-        <NuxtLink to="/rak">
+        <NuxtLink to="/">
         <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink >
         </form>
@@ -31,7 +27,6 @@
   
 </template>
 <script setup>
-
 const supabase = useSupabaseClient()
 
 const members = ref([]);
@@ -39,7 +34,7 @@ const objectives = ref([]);
 
 const form = ref({
     nama: '',
-    peminjaman: '',
+    judul: ''
 });
 
 const kirimData = async () => {
@@ -48,19 +43,20 @@ const kirimData = async () => {
     else throw error
 }
 
- const gettanggal_pengembalian= async () => {
-     const { data, error } = await supabase.from("tanggal_pengembalian").select("*")
-     if(data) members.value = data
- }
-const getpeminjaman = async () => {
-    const { data, error } = await supabase.from("peminjaman").select()
+const gettanggal_pengembalian= async () => {
+    const { data, error } = await supabase.from("tanggal_pengembalian").select("*")
+    if(data) members.value = data
+};
+
+const getjudul = async () => {
+    const { data, error } = await supabase.from("buku").select()
     if(data) objectives.value = data
 };
 
 
 onMounted(() => {
     gettanggal_pengembalian();
-    getpeminjaman();
+    getjudul();
 });
 </script>
 <style scoped>

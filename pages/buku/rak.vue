@@ -14,15 +14,15 @@
             <div class="angka-container-grid">
                 <div class="angka-item area-1"><NuxtLink to="/buku">000</NuxtLink></div>
                 <div class="angka-item area-2"><NuxtLink to="/buku">100</NuxtLink></div>
-                <div class="angka-item area-3"><NuxtLink to="">200</NuxtLink></div>
-                <div class="angka-item area-4"><NuxtLink to="">300</NuxtLink></div>
-                <div class="angka-item area-5"><NuxtLink to="">400</NuxtLink></div>
-                <div class="angka-item area-6"><NuxtLink to="">500</NuxtLink></div>
-                <div class="angka-item area-7"><NuxtLink to="">600</NuxtLink></div>
-                <div class="angka-item area-8"><NuxtLink to="">700</NuxtLink></div>
-                <div class="angka-item area-9"><NuxtLink to="">800</NuxtLink></div>
-                <div class="angka-item area-10"><NuxtLink to=""></NuxtLink>0</div>
-            <NuxtLink to=""></NuxtLink>
+                <div class="angka-item area-3"><NuxtLink to="/buku">200</NuxtLink></div>
+                <div class="angka-item area-4"><NuxtLink to="/buku">300</NuxtLink></div>
+                <div class="angka-item area-5"><NuxtLink to="/buku">400</NuxtLink></div>
+                <div class="angka-item area-6"><NuxtLink to="/buku">500</NuxtLink></div>
+                <div class="angka-item area-7"><NuxtLink to="/buku">600</NuxtLink></div>
+                <div class="angka-item area-8"><NuxtLink to="/buku">700</NuxtLink></div>
+                <div class="angka-item area-9"><NuxtLink to="/buku">800</NuxtLink></div>
+                <div class="angka-item area-10"><NuxtLink to="/buku">900</NuxtLink></div>
+            
             </div>
 
         </div> 
