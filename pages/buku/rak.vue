@@ -12,16 +12,16 @@
         </div>
         <div class="position-relative ">
             <div class="angka-container-grid">
-                <div class="angka-item area-1"><NuxtLink to="/buku">000</NuxtLink></div>
-                <div class="angka-item area-2"><NuxtLink to="/buku">100</NuxtLink></div>
-                <div class="angka-item area-3"><NuxtLink to="/buku">200</NuxtLink></div>
-                <div class="angka-item area-4"><NuxtLink to="/buku">300</NuxtLink></div>
-                <div class="angka-item area-5"><NuxtLink to="/buku">400</NuxtLink></div>
-                <div class="angka-item area-6"><NuxtLink to="/buku">500</NuxtLink></div>
-                <div class="angka-item area-7"><NuxtLink to="/buku">600</NuxtLink></div>
-                <div class="angka-item area-8"><NuxtLink to="/buku">700</NuxtLink></div>
-                <div class="angka-item area-9"><NuxtLink to="/buku">800</NuxtLink></div>
-                <div class="angka-item area-10"><NuxtLink to="/buku">900</NuxtLink></div>
+                <div class="angka-item area-1"><NuxtLink to="/buku/[1]">Komputer,informasi & referensi 000</NuxtLink></div>
+                <div class="angka-item area-2"><NuxtLink to="/buku">Filsafat & psikologi 100</NuxtLink></div> 
+                 <div class="angka-item area-3"><NuxtLink to="/buku">Agama 200</NuxtLink></div> 
+                 <div class="angka-item area-4"><NuxtLink to="/buku">Ilmu sosial 300</NuxtLink></div> 
+                 <div class="angka-item area-5"><NuxtLink to="/buku">Bahasa 400</NuxtLink></div> 
+                 <div class="angka-item area-6"><NuxtLink to="/buku">Sains dan matematika 500</NuxtLink></div> 
+                 <div class="angka-item area-7"><NuxtLink to="/buku">Teknologi atau ilmu terapan 600</NuxtLink></div> 
+                 <div class="angka-item area-8"><NuxtLink to="/buku">Kesenian 700</NuxtLink></div> 
+                 <div class="angka-item area-9"><NuxtLink to="/buku">Sastra 800</NuxtLink></div> 
+                 <div class="angka-item area-10"><NuxtLink to="/buku">Sejarah dan geografi 900</NuxtLink></div> 
             
             </div>
 

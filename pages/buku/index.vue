@@ -21,7 +21,7 @@
                     <img :src="buku.cover" class="cover" :alt="buku.judul" />
                   </div>
                 </div>
-              </nuxt-link>
+              </nuxt-link> 
               </div>
             </div>
           </div>

@@ -18,21 +18,19 @@
                   <li class="list-group-item">rak : {{ buku.rak }}</li>
                   <li class=" list-group-item">deskripsi : {{ buku.deskripsi }}</li>
                   <NuxtLink :to="buku.link" target="_blank" class="btn btn-primary">Baca</NuxtLink>
+                  <NuxtLink to="/peminjaman/penambah">
+                    <button type="submit" class="btn btn-primary btn-lg mt-4 w-100 ">Pinjam buku ini</button>
+                  </NuxtLink>
+                  <NuxtLink to="/pengembalian/penambah">
+                    <button type="submit" class="btn btn-primary btn-lg  mt-4  w-100 ">Kembalikan buku</button>
+                 </NuxtLink>
               </ul>
           </div>
       </div>
-      <NuxtLink to="/buku" class="btn btn-light btn-lg rounded-5 px-5">
+  </div>
+  <NuxtLink to="/buku" class="btn btn-dark btn-lg rounded-5 px-5 ">
       kembali
-      </NuxtLink>
-  </div>
-  <div class="footer">
-    <NuxtLink to="/peminjaman/penambah">
-      <button type="submit" class="btn btn-primary btn-lg rounded-5 px-5">pinjam buku ini</button>
-    </NuxtLink>
-    <NuxtLink to="/pengembalian/penambah">
-      <button type="submit" class="btn btn-primary btn-lg rounded-5 px-5">kembalikan buku</button>
-    </NuxtLink>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>
@@ -59,9 +57,8 @@ onMounted(() => {
 .cover{
   width: 100%;
 }
-.footer {
-  background-color: #F1F1F1;
-  text-align: center;
-  padding: 10px;
-}
+ /* .{
+  background-color: #000000;
+  margin-right: 30px;
+}  */
 </style>

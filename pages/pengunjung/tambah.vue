@@ -57,8 +57,10 @@
                             <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
                         </select>
                     </div>
-                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
-                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button>
+                    <NuxtLink to="/pengunjung">
+                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button></NuxtLink>
+                    <NuxtLink to="/">
+                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button></NuxtLink>
                     
                 </form>
             </div>

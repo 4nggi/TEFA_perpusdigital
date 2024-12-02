@@ -14,7 +14,7 @@
             <nuxt-link to="../buku/rak">
                   <div class="card bg-buku rounded-5">
                       <div class="card-body">
-                          <h2 class="btn btn-light fs-3 rounded-3">Cari Buku</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3"> Rak</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -24,7 +24,7 @@
             <nuxt-link to="../peminjaman">
                   <div class="card bg-peminjaman rounded-5">
                       <div class="card-body">
-                          <h2 class="btn btn-light fs-3 rounded-3"> Riwayat peminjaman buku</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3">Riwayat peminjaman buku</h2>
                       </div>
                   </div>
               </nuxt-link>
