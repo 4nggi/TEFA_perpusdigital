@@ -31,14 +31,18 @@
 <script setup>
 const supabase = useSupabaseClient();
 
+const route = useRoute()
+
 const books = ref([])
 
 const getBuku = async () => {
   const { data, error } = await supabase
     .from('buku')
     .select(`*, kategori_buku(*)`)
+    .eq("kategori", route.params.id)
     .ilike("judul", `%${keyword.value}%`)
   if (data) books.value = data;
+  if (error) throw error
 
 };
 

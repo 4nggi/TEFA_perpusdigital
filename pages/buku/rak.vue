@@ -1,72 +1,88 @@
 <template>
-<div class="bg">
-    <div class="container ">
-        <div class="row justify-content-center  ">
-            <div class="col-lg-2">
-                <div class="card rounded-5">
-                    <div class="card-body text-center">
-                        <h2>Rak buku</h2>
-                    </div>
-                </div>
-            </div>
+  <div class="bg">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center">
+          <h2 class="text-white">RAK BUKU</h2>
         </div>
-        <div class="position-relative ">
-            <div class="angka-container-grid">
-                <div class="angka-item area-1"><NuxtLink to="/kategori">Komputer,informasi & referensi 000</NuxtLink></div>
-                <div class="angka-item area-2"><NuxtLink to="/buku">Filsafat & psikologi 100</NuxtLink></div> 
-                 <div class="angka-item area-3"><NuxtLink to="/buku">Agama 200</NuxtLink></div> 
-                 <div class="angka-item area-4"><NuxtLink to="/buku">Ilmu sosial 300</NuxtLink></div> 
-                 <div class="angka-item area-5"><NuxtLink to="/buku">Bahasa 400</NuxtLink></div> 
-                 <div class="angka-item area-6"><NuxtLink to="/buku">Sains dan matematika 500</NuxtLink></div> 
-                 <div class="angka-item area-7"><NuxtLink to="/buku">Teknologi atau ilmu terapan 600</NuxtLink></div> 
-                 <div class="angka-item area-8"><NuxtLink to="/buku">Kesenian 700</NuxtLink></div> 
-                 <div class="angka-item area-9"><NuxtLink to="/buku">Sastra 800</NuxtLink></div> 
-                 <div class="angka-item area-10"><NuxtLink to="/buku">Sejarah dan geografi 900</NuxtLink></div> 
-            
+      </div>
+      <div class="row gap-1 justify-content-center">
+        <div class="col-sm-4" v-for="(kategori, i) in jenis" :key="i">
+          <nuxt-link :to="`/buku/kategori-${kategori.id}`">
+            <div class="card">
+              <div class="card-body">
+                {{ kategori.nama }} | {{ kategori.keterangan }}
+              </div>
             </div>
+          </nuxt-Link>
+        </div>
+      </div>
+    </div>
 
-        </div> 
-</div>
-</div><nuxt-link to="/">
-        <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button>
-      </nuxt-link>
+  </div>
+  <nuxt-link to="/">
+    <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button>
+  </nuxt-link>
 </template>
-<style scoped>
-.bg{
-    background-image: url('/assets/img/pd.jpg');
-    background-size: cover;
-    height: 100vh;
-    width: 207.5vh;
+<script setup>
+const supabase = useSupabaseClient();
+const jenis = ref([])
+
+const getKategori = async () => {
+  const { data, error } = await supabase
+    .from('kategori_buku')
+    .select(`*`)
+  if (data) jenis.value = data
+  if (error) throw error
 }
+
+onMounted(() => {
+  getKategori();
+});
+</script>
+<style scoped>
+.bg {
+  background-image: url('/assets/img/pd.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 207.5vh;
+}
+
 .angka-container-grid {
   display: grid;
   grid-template-areas:
     "area-1 area-2 area-3"
     "area-4 area-5 area-6"
     "area-7 area-8 area-9"
-    ". area-10 ."; /* Elemen terakhir tanpa elemen lain di sebelah kanan */
+    ". area-10 .";
+  /* Elemen terakhir tanpa elemen lain di sebelah kanan */
   gap: 70px;
 }
 
 .area-1 {
   grid-area: area-1;
-  left: -70px; /* Geser ke kiri */
+  left: -70px;
+  /* Geser ke kiri */
 }
 
 .area-4 {
   grid-area: area-4;
-  left: 40px; /* Geser ke kiri */
+  left: 40px;
+  /* Geser ke kiri */
 }
 
 .area-7 {
   grid-area: area-7;
-  left: 40px; /* Geser ke kiri */
+  left: 40px;
+  /* Geser ke kiri */
 }
 
 .area-10 {
   grid-area: area-10;
-  left: 40px; /* Geser ke kiri */
+  left: 40px;
+  /* Geser ke kiri */
 }
+
 .angka-item {
   background-color: #d6d6d6;
   color: black;
@@ -76,8 +92,4 @@
   font-size: 16px;
   font-weight: bold;
 }
-
-
-
-
 </style>

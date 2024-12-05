@@ -28,7 +28,7 @@
           </div>
       </div>
   </div>
-  <NuxtLink to="/buku" class="btn btn-dark btn-lg rounded-5 px-5 ">
+  <NuxtLink to="/buku/rak" class="btn btn-dark btn-lg rounded-5 px-5 ">
       kembali
   </NuxtLink>
 </template>
