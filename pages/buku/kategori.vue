@@ -15,7 +15,7 @@
           <div class="my-3 text-muted">menampilkan {{ buku?.length }} dari {{ totalBuku }}</div>
           <div class="row justify-content-evenly">
             <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
-            <nuxt-link :to="`/buku/${buku.id}`">
+            <nuxt-link :to="`/buku/${buku.kategori}`">
                 <div class="card mb-3 shadow-lg">
                   <div class="card-body">
                     <img :src="buku.cover" class="cover" :alt="buku.judul" />
@@ -41,6 +41,7 @@
     const { data, error} = await supabase
     .from('buku')
     .select(`*, kategori_buku(*)`)
+    .eq('id', route.params.id)
     .ilike("judul", `%${keyword.value}%`)
     if(data) books.value= data;
   

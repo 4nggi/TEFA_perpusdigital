@@ -12,7 +12,7 @@
         </div>
         <div class="position-relative ">
             <div class="angka-container-grid">
-                <div class="angka-item area-1"><NuxtLink to="/buku/[1]">Komputer,informasi & referensi 000</NuxtLink></div>
+                <div class="angka-item area-1"><NuxtLink to="/kategori">Komputer,informasi & referensi 000</NuxtLink></div>
                 <div class="angka-item area-2"><NuxtLink to="/buku">Filsafat & psikologi 100</NuxtLink></div> 
                  <div class="angka-item area-3"><NuxtLink to="/buku">Agama 200</NuxtLink></div> 
                  <div class="angka-item area-4"><NuxtLink to="/buku">Ilmu sosial 300</NuxtLink></div> 
@@ -27,7 +27,9 @@
 
         </div> 
 </div>
-</div>
+</div><nuxt-link to="/">
+        <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button>
+      </nuxt-link>
 </template>
 <style scoped>
 .bg{
