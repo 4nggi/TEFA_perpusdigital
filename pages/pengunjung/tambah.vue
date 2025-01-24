@@ -57,10 +57,9 @@
                             <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
                         </select>
                     </div>
-                    <NuxtLink to="/pengunjung">
-                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button></NuxtLink>
-                    <NuxtLink to="/">
-                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button></NuxtLink>
+                   
+                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
+                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button>
                     
                 </form>
             </div>
@@ -70,8 +69,8 @@
 <script setup>
 const supabase = useSupabaseClient()
 
-const members = ref([]);
-const objectives = ref([]);
+const members = ref([])
+const objectives = ref([])
 
 const form = ref({
     nama: "",
@@ -80,21 +79,25 @@ const form = ref({
     jurusan: "",
     kelas: "",
     keperluan: "",
-});
+})
 
 const kirimData = async () => {
-    const { error } = await supabase.from("pengunjung").insert([form.value])
-    if (!error) navigateTo("/pengunjung")
-    else throw error
+    const { error } = await supabase.from('pengunjung').insert([form.value])
+    if(!error) {
+    navigateTo('/pengunjung')
+  }
+  else{
+    console.log(error)
+  }     
 }
 
 const getkeanggotaan = async () => {
-    const { data, error } = await supabase.from("keanggotaan").select("*")
+    const { data, error } = await supabase.from('keanggotaan').select('*')
     if (data) members.value = data
 };
 
 const getkeperluan = async () => {
-    const { data, error } = await supabase.from("keperluan").select("*")
+    const { data, error } = await supabase.from('keperluan').select('*')
     if (data) objectives.value = data
 };
 
