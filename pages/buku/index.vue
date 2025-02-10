@@ -8,7 +8,7 @@
               placeholder="mau baca apa hari ini?" />
           </form>
         </div>
-        <div class="my-3 text-muted">menampilkan {{ buku?.length }} dari {{ totalBuku }}</div>
+        <div class="my-3 text-muted">Menampilkan {{ buku?.length }} dari {{ totalBuku }}</div>
         <div class="row justify-content-evenly">
           <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
             <nuxt-link :to="`/buku/${buku.id}`">
@@ -24,7 +24,7 @@
     </div>
   </div>
   <nuxt-link to="/buku/rak">
-    <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button>
+    <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">Kembali</button>
   </nuxt-link>
 </template>
 

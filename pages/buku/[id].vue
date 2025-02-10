@@ -12,11 +12,11 @@
           </div>
           <div class="col-md-6">
               <ul class="list-group list-group-flush">
-                  <li class="list-group-item">penulis : {{  buku.penulis }}</li>
-                  <li class="list-group-item">tahun_terbit : {{  buku.tahun_terbit }}</li>
-                  <li class="list-group-item">penerbit : {{ buku.penerbit }}</li>
-                  <li class="list-group-item">rak : {{ buku.rak }}</li>
-                  <li class=" list-group-item">deskripsi : {{ buku.deskripsi }}</li>
+                  <li class="list-group-item">Penulis : {{  buku.penulis }}</li>
+                  <li class="list-group-item">Tahun terbit : {{  buku.tahun_terbit }}</li>
+                  <li class="list-group-item">Penerbit : {{ buku.penerbit }}</li>
+                  <li class="list-group-item">Rak : {{ buku.rak }}</li> 
+                  <li class=" list-group-item">Deskripsi : {{ buku.deskripsi }}</li>
                   <NuxtLink :to="buku.link" target="_blank" class="btn btn-primary">Baca</NuxtLink>
                   <NuxtLink to="/peminjaman/penambah">
                     <button type="submit" class="btn btn-primary btn-lg mt-4 w-100 ">Pinjam buku ini</button>
@@ -29,7 +29,7 @@
       </div>
   </div>
   <NuxtLink to="/buku/rak" class="btn btn-dark btn-lg rounded-5 px-5 ">
-      kembali
+      Kembali
   </NuxtLink>
 </template>
 

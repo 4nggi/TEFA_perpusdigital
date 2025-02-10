@@ -33,7 +33,7 @@
             <nuxt-link to="../pengembalian">
                   <div class="card bg-pengembalian rounded-5">
                       <div class="card-body">
-                          <h2 class="btn btn-light fs-3 rounded-3">pengembalian</h2>
+                          <h2 class="btn btn-light fs-3 rounded-3">Pengembalian</h2>
                       </div>
                   </div>
               </nuxt-link>
@@ -48,7 +48,7 @@
       <div class="card-body text">
         <div class="raccing">
           <nuxt-link to="/pengunjung">
-            <h2 class="pt-4"><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
+            <h2 class="pt-4"><span class="no">{{ jml_pengunjung }}</span> Pengunjung</h2>
           </nuxt-link>
         </div>
       </div>

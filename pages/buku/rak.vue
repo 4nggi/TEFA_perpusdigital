@@ -21,7 +21,7 @@
 
   </div>
   <nuxt-link to="/">
-    <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button>
+    <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">Kembali</button>
   </nuxt-link>
 </template>
 <script setup>

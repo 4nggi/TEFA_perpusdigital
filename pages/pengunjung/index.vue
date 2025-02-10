@@ -7,18 +7,18 @@
                         <input v-model="keyword" type="search" class="form-control form-control-lg rounded-5" placeholder=" filter...">
                     </form>
                 </div>
-                <div class="my-3 text-muted">menampilkan {{ visitors.length }} dari {{ jumlah }}</div>
+                <div class="my-3 text-muted">Menampilkan {{ visitors.length }} dari {{ jumlah }}</div>
                 <!-- <div class="container mt-5"> -->
-                <div class="my-3 text-muted"> daftar riwayat kunjungan </div>
+                <div class="my-3 text-muted"> Daftar riwayat kunjungan </div>
                 <!-- </div> -->
                 <table class="table">
                     <thead>
                         <tr>
-                            <td>no</td>
-                            <td>NAMA</td>
-                            <td>KEANGGOTAAN</td>
-                            <td>WAKTU</td>
-                            <td>KEPERLUAN</td>
+                            <td>No</td>
+                            <td>Nama</td>
+                            <td>Keanggotaan</td>
+                            <td>Waktu</td>
+                            <td>Keperluan</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,24 +33,14 @@
                 </table>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col-md"> -->
-        <!--- button triger modal --->
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelTambah">
-                    <i class="fa fa-plus">tambah data</i>
-                </button>
-            </div>
-            <div class="col-md">
-                <button class="btn btn-outline-secondary shadow float-right">print<i class="fa fa-print"></i></button>
-            </div>
-        </div> -->
+       
         <div class="content">
             <p class="no-print"></p>
         </div>
 
-        <NuxtLink to="pengunjung"><button onclick="window.print()" class="btn btn-primary mt-3">print</button>
+        <NuxtLink to="pengunjung"><button onclick="window.print()" class="btn btn-primary mt-3">Print</button>
         </NuxtLink>
-        <NuxtLink to="/"><button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button></NuxtLink>
+        <NuxtLink to="/"><button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">Kembali</button></NuxtLink>
     </div>
 </template>
 <script setup>

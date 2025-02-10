@@ -15,7 +15,8 @@
                             <td>No</td>
                             <td>Nama</td>
                             <td>Tanggal pengembalian</td>
-                            <td>Judul Buku</td>
+                            <td>Judul buku</td>
+                            <td>Keanggotaan</td>
                             
                         </tr>
                     </thead>
@@ -25,6 +26,7 @@
                             <td>{{ visitor.nama }}</td>
                             <td>{{ visitor.tanggal_pengembalian}}</td>
                             <td>{{ visitor.buku.judul}}</td>
+                            <td>{{ visitor.keanggotaan }}</td>
                         </tr>
                     </tbody>
                  </table>
@@ -41,7 +43,7 @@
   const visitors = ref([])
   
   const getPengembalian = async () => {
-    const { data, error } = await supabase.from('pengembalian').select(`*, buku(*)`).order('id', { ascending: false })
+    const { data, error } = await supabase.from('pengembalian').select(`*, buku(*), keanggotaan(*)`).order('id', { ascending: false })
     if(data)visitors.value = data
     }
   

@@ -9,7 +9,7 @@
                 SMKN 4 Tasikmalaya
             </address>
             <address>
-                JL.Depok,Sukamanah,Purbaratu
+                JL.Depok,Sukamenak,Purbaratu
             </address>
         </div>
     </div>
