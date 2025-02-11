@@ -51,16 +51,13 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <select v-model="form.keperluan"
-                            class="form-control form-control-lg form-select rounded-5 mb-2 abu">
-                            <option value="">Keperluan</option>
-                            <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
-                        </select>
+                        <input v-model="form.keperluann" class="form-control form-control-lg rounded-5 abu" type="text"
+                            placeholder="keperluan..." />
                     </div>
                     
                    
                     <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu">kirim</button>
-                    <button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button>
+                   <NuxtLink to="/"><button type="submit" class=" r btn btn-dark btn-lg rounded-5 px-5 abu ">kembali</button></NuxtLink> 
                     
                 </form>
             </div>
@@ -79,7 +76,7 @@ const form = ref({
     tingkat: "",
     jurusan: "",
     kelas: "",
-    keperluan: "",
+    keperluann: "",
 })
 
 const kirimData = async () => {
@@ -98,7 +95,7 @@ const getkeanggotaan = async () => {
 };
 
 const getkeperluan = async () => {
-    const { data, error } = await supabase.from('keperluan').select('*')
+    const { data, error } = await supabase.from('keperluann').select('*')
     if (data) objectives.value = data
 };
 
@@ -133,7 +130,7 @@ onMounted(() => {
     background-color: aqua;
 }
 
-.keperluan {
+.keperluann {
     background-color: aqua;
 }
 

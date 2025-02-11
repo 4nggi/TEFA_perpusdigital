@@ -9,6 +9,7 @@
                     </form>
                 </div>
                 <div class="my-3 text-muted">menampilkan daftar riwayat kunjungan </div>
+                
                  <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -26,12 +27,18 @@
                             <td>{{ visitor.nama }}</td>
                             <td>{{ visitor.tanggal_pengembalian}}</td>
                             <td>{{ visitor.buku.judul}}</td>
-                            <td>{{ visitor.keanggotaan }}</td>
+                            <td>{{ visitor.keanggotaan?.nama }}</td>
                         </tr>
                     </tbody>
                  </table>
             </div>
         </div>
+        <div class="content">
+            <p class="no-print"></p>
+        </div>
+
+        <NuxtLink to="pengunjung"><button onclick="window.print()" class="btn btn-primary mt-3">Print</button>
+        </NuxtLink><br><br>
         <NuxtLink to="/">
             <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">kembali</button>
         </NuxtLink>
@@ -42,6 +49,12 @@
   const keyword = ref('')
   const visitors = ref([])
   
+
+  const totalPengembalian = async ()=> {
+  const { data, count } = await supabase.from('pengunjung').select("*", {count: 'exact' })
+  if (data) jumlah.value = count
+}
+
   const getPengembalian = async () => {
     const { data, error } = await supabase.from('pengembalian').select(`*, buku(*), keanggotaan(*)`).order('id', { ascending: false })
     if(data)visitors.value = data
@@ -49,5 +62,20 @@
   
   onMounted(() => {
     getPengembalian()
+    totalPengembalian()
   })
   </script>
+  
+<style>
+@media print {
+    .btn {
+        display: none;
+    }
+
+    .form-control {
+        display: none;
+    }
+
+
+}
+</style>

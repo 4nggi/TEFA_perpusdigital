@@ -27,7 +27,7 @@
                             <td>{{ visitor.nama }}</td>
                             <td>{{ visitor.keanggotaan.nama }}</td>
                             <td>{{ visitor.tanggal }}, {{ visitor.waktu }}</td>
-                            <td>{{ visitor.keperluan.nama }}</td>
+                            <td>{{ visitor.keperluann }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -55,7 +55,7 @@ const totalPengunjung = async ()=> {
 }
 
 const getPengunjung = async () => {
-    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('id', { ascending: false })
+    const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*)`).order('id', { ascending: false })
     .ilike('nama', `%${keyword.value}%`)
     if (data) visitors.value = data
 }

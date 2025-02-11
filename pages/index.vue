@@ -67,6 +67,54 @@
     <Chart />
   </div>
 </div>
+<div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="my-4 text-white text-center">Contact Us</h4>
+
+            <div class="footerContactUs">
+              <div class="perFooterContactUs">
+                <i class="fas text-white fa-envelope"></i>
+                <p class="text-white">info@smkn4-tsm.sch.id</p>
+              </div>
+
+              <div class="perFooterContactUs">
+                <i class="fas text-white fa-phone-alt"></i>
+                <p class="text-white">02265312059</p>
+              </div>
+
+              <div class="perFooterContactUs">
+                <i class="fas text-white fa-road"></i>
+                <p class="text-white">Jl Depok Kel. Sukamenak Kec. Purbaratu Kota Tasikmalaya 46196.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h4 class="my-4 text-center text-white"></h4>
+            <div class="footerAbout">
+              <a href="" class="text-white"></a>
+              <a href="" class="text-white"></a>
+              <a href="" class="text-white"></a>
+              <a href="" class="text-white">Copyright by @anggi</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <h4 class="my-4 text-white">Newsletter</h4>
+            <form>
+              <div class="form-group">
+                <input class="form-control" type="search" placeholder="Example@gmail.com" aria-label="Search" />
+                <button class="btn btn-primary btn-newsletter" type="submit">Kirim</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
 </template>
 <script setup>
 const supabase = useSupabaseClient()
@@ -165,4 +213,76 @@ width: 50%;
 .box a{
 text-decoration: none;
 }
+.footer {
+  background-color: #263238;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  margin-top: 125px;
+}
+
+.footerContactUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footerContactUs .perFooterContactUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.footerContactUs .perFooterContactUs p {
+  margin: 0 0 0 20px;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.footerAbout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.footerAbout a {
+  margin: 5px 0;
+}
+
+.btn-newsletter {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footerCopyright {
+  width: 100%;
+  height: 60px;
+  background-color: #111111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footerCopyright p {
+  margin: 0;
+}
+
+.perFooterContactUs p {
+    font-size: .9em;
+  }
 </style>

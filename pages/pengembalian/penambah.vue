@@ -1,12 +1,13 @@
 <template>
-    <div class="container-fluid">
+
+<div class="container-fluid">
       <div class="row">
           <div class="col-lg-12">
               <h2 class="text-center my-4">Form Pengembalian</h2>
               <div class="my-3">
         <form @submit.prevent="kirimData">
         <label form="nama"> Nama:</label>
-        <input type="text" id="nama" v-model="form.nama" required class="form-control form-control-lg rounded-5 abu"><br><br>
+        <input type="text" id="nama" v-model="form.nama" required class="form-control form-control-lg rounded-5 abu">
         <label form="judul_buku">Judul Buku:</label> 
                             <div class="col-lg-12">
                                    <select v-model="form.judul" class="form-control form-control-lg form-select rounded-5 mb-2 abu">
@@ -14,6 +15,7 @@
                                     <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.judul }}</option>
                                 </select>   
                             </div>
+                            <label form="judul_buku">Keanggotaan</label>
                             <div class="mb-3">
                         <select v-model="form.keanggotaan"
                             class="form-control form-control-lg form-select rounded-5 abu">
@@ -56,18 +58,51 @@
                             </div>
                         </div>
                     </div>
-        <br>
-        <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5 abu">Kirim</button>
+                    <br>
+        <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5 abu">Kembalikan Buku</button><br><br>
         <NuxtLink to="/">
-        <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">Kembali</button>
+        <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">back</button>
         </NuxtLink >
         </form>
             </div>
         </div>
     </div>
     </div>
-  
+
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-lg-12">
+    <h3>Riwayat Peminjaman</h3>
+    <div class="my-3">
+        <form @submit.prevent="getPeminjaman"></form>
+    </div>
+    <div class="my-3 text-muted">Menampilkan daftar riwayat peminjaman </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>No</td>
+                            <td>Nama</td>
+                            <td>Keangotaan</td>
+                            <td>Tanggal Peminjaman</td>
+                            <td>Judul Buku</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(visitor, i) in visitors" :key="i">
+                            <td>{{ i + 1 }}.</td>
+                            <td>{{ visitor.nama }}</td>
+                            <td>{{ visitor.anggota?.nama }}</td>
+                            <td>{{ visitor.tanggal_peminjaman }}</td>
+                            <td>{{ visitor.buku.judul }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  </div>
 </template>
+
 <script setup>
 const supabase = useSupabaseClient()
 
@@ -105,12 +140,32 @@ const getkeanggotaan = async () => {
 };
 
 
+
+
+const keyword = ref('')
+const jumlah = ref(0)
+const visitors = ref([])
+
+const totalPeminjaman = async ()=> {
+  const { data, count } = await supabase.from('peminjaman').select("*", {count: 'exact' })
+  if (data) jumlah.value = count
+}
+
+
+const getPeminjaman = async () => {
+    const { data, error } = await supabase.from('peminjaman').select(`*, anggota(*), buku(*)`).order('id', { ascending: false })
+    if (data) visitors.value = data
+}
+
 onMounted(() => {
+    getPeminjaman()
+    totalPeminjaman()
     gettanggal_pengembalian();
     getjudul();
     getkeanggotaan();
-});
-</script>
+})
+</script>   
+
 <style scoped>
 .btn{
     background-color: rgb(223, 223, 223);
@@ -132,5 +187,45 @@ onMounted(() => {
 .n{
     position: fixed;
     right: 30px;
+}
+
+
+.return-book {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
 </style>

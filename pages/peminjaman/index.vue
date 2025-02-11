@@ -32,7 +32,13 @@
                 </table>
             </div>
         </div>
-        <NuxtLink to="/buku">
+        <div class="content">
+            <p class="no-print"></p>
+        </div>
+
+        <NuxtLink to="pengunjung"><button onclick="window.print()" class="btn btn-primary mt-3">Print</button>
+        </NuxtLink><br><br>
+        <NuxtLink to="/">
             <button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">Kembali</button>
         </NuxtLink> 
     </div>
@@ -58,4 +64,18 @@ onMounted(() => {
     getPeminjaman()
     totalPeminjaman()
 })
-</script>   
+</script> 
+
+<style>
+@media print {
+    .btn {
+        display: none;
+    }
+
+    .form-control {
+        display: none;
+    }
+
+
+}
+</style>  

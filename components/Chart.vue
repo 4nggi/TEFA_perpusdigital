@@ -9,7 +9,7 @@ import Chart, { type ChartConfiguration, type ChartItem } from 'chart.js/auto'
 
 // const client = useSupabaseClient()
 const jumlahPengunjung = [] // array biasa 
-const labels = ['januari', 'februari', 'maret', 'april', 'mei', 'juni']
+const labels = ['januari', 'februari', 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember']
 
 // const getMonthByGrouped = async () => {
 //   const { data, error } = await client
@@ -55,7 +55,7 @@ const data = {
     label: 'Pengunjung',
     backgroundColor: 'rgb(0, 153, 255, 100)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [20, 10, 30, 40, 15, 20], 
+    data: [20, 10, 30, 40, 15, 20, 30, 12, 26, 19, 16, 19], 
   }]
 };
 
