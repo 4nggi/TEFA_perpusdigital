@@ -28,6 +28,10 @@
                             <td>{{ visitor.tanggal_pengembalian}}</td>
                             <td>{{ visitor.buku.judul}}</td>
                             <td>{{ visitor.keanggotaan?.nama }}</td>
+                            <td v-if="user" class="text-center">
+                                <button v-if="!visitor.tanggal_pengembalian" @click="onDone(visitor.id)" class="btn btn-light btn-sm">♻️</button>
+                                <span v-else>✔</span>
+                            </td>   
                         </tr>
                     </tbody>
                  </table>

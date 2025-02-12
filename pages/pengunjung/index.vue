@@ -39,7 +39,7 @@
         </div>
 
         <NuxtLink to="pengunjung"><button onclick="window.print()" class="btn btn-primary mt-3">Print</button>
-        </NuxtLink>
+        </NuxtLink><br><br>
         <NuxtLink to="/"><button type="submit" class="btn btn-dark btn-lg rounded-5 px-5">Kembali</button></NuxtLink>
     </div>
 </template>

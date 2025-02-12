@@ -120,7 +120,7 @@ const form = ref({
 
 const kirimData = async () => {
     const { error } = await supabase.from("pengembalian").insert([form.value])
-    if(!error) navigateTo("/pengembalian/")
+    if(!error) navigateTo("/peminjaman/")
     else throw error
 }
 

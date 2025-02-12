@@ -16,6 +16,7 @@
                             <td>Nama</td>
                             <td>Keangotaan</td>
                             <td>Tanggal Peminjaman</td>
+                            <td>Tanggal Pengembalian</td>
                             <td>Judul Buku</td>
 
                         </tr>
@@ -26,6 +27,9 @@
                             <td>{{ visitor.nama }}</td>
                             <td>{{ visitor.anggota?.nama }}</td>
                             <td>{{ visitor.tanggal_peminjaman }}</td>
+                            <td v-if="!visitor.tanggal_pengembalian" class="bg-danger text-white">Masih dipinjam</td>
+                            <td v-else>{{ visitor.tanggal_pengembalian }}</td>
+
                             <td>{{ visitor.buku.judul }}</td>
                         </tr>
                     </tbody>
