@@ -13,6 +13,17 @@
             </address>
         </div>
     </div>
+    <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <nav class="nav justify-content-center pt-3 pb-3 mb-4 proto rounded-pill">
+          <nuxt-link to="/pengaturan" v-if="user" class="nav-link"><span class="nav-text">PENGATURAN</span></nuxt-link>
+          <nuxt-link to="/auth/signin" v-if="user === null" class="nav-link"><span class="nav-text">SIGNIN</span></nuxt-link>
+          <nuxt-link to="/auth/signout" v-if="user != null" class="nav-link"><span class="nav-text">SIGNOUT</span></nuxt-link>
+        </nav>
+      </div>
+    </div>
+  </div>
   </template>
   <style>
   .color{

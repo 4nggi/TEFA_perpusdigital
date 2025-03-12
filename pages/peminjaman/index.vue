@@ -31,6 +31,11 @@
                             <td v-else>{{ visitor.tanggal_pengembalian }}</td>
 
                             <td>{{ visitor.buku.judul }}</td>
+                            <td v-if="user" class="text-center">
+                             <button v-if="!item.tgl_kembali" @click="onDone(item.id)" class="btn btn-light btn-sm">♻️</button>
+                            <span v-else>✔</span>
+                            </td>
+
                         </tr>
                     </tbody>
                 </table>
